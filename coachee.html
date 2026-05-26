@@ -297,8 +297,8 @@ async function submitDiagnostico() {
     completado_en: new Date().toISOString()
   };
 
-  try {
-    if (db && SUPABASE_URL !== 'https://jsuwyhgrxfmbgxxdlbon.supabase.co') {
+  try { 
+    if (db && SUPABASE_URL === 'https://jsuwyhgrxfmbgxxdlbon.supabase.co') {
       await db.from('coachees').update({ diagnostico }).eq('slug', coacheeId);
     }
   } catch(e) {}
